@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEXOVIA Technologies | AI • Software • Cyber Security</title>
+
+  <meta name="description"
+        content="NEXOVIA Technologies - AI, Software Development, Cyber Security, App Development and Technology Solutions in Coimbatore, India.">
+
+  <meta name="keywords"
+        content="NEXOVIA, NEXOVIA Technologies, AI, Software Development, Cyber Security, Coimbatore">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050914;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(5, 9, 20, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #18233a;
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #4ade80;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #d7deeb;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #4ade80;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 130px 20px 80px;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          #123b35 0%,
+          transparent 38%
+        ),
+        #050914;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid #256d51;
+      border-radius: 30px;
+      color: #4ade80;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 10vw, 95px);
+      letter-spacing: 5px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #4ade80;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 36px);
+      margin-bottom: 20px;
+      color: #dbe5f5;
+    }
+
+    .hero p {
+      color: #9ca9bd;
+      max-width: 680px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .primary {
+      background: #22c55e;
+      color: #03110a;
+    }
+
+    .primary:hover {
+      background: #4ade80;
+      transform: translateY(-3px);
+    }
+
+    .secondary {
+      border: 1px solid #334155;
+      color: white;
+    }
+
+    .secondary:hover {
+      border-color: #4ade80;
+      color: #4ade80;
+      transform: translateY(-3px);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .section-title span {
+      color: #4ade80;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #8e9aad;
+      margin-bottom: 45px;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #aab5c7;
+      font-size: 17px;
+    }
+
+    .stats {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      min-width: 180px;
+      padding: 22px;
+      background: #0b1220;
+      border: 1px solid #1c2a42;
+      border-radius: 12px;
+    }
+
+    .stat h3 {
+      color: #4ade80;
+      font-size: 27px;
+    }
+
+    .stat p {
+      color: #8995a9;
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #0b1220;
+      border: 1px solid #1c2a42;
+      padding: 30px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #22c55e;
+      box-shadow: 0 10px 40px rgba(34, 197, 94, 0.12);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #8f9caf;
+      font-size: 14px;
+    }
+
+    .projects {
+      background: #070d19;
+      max-width: none;
+    }
+
+    .projects-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .internship-box {
+      margin-top: 45px;
+      padding: 35px;
+      background: #0b1220;
+      border: 1px solid #1c2a42;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .internship-box h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .internship-box p {
+      color: #9ba8ba;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-section {
+      max-width: 1000px;
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          #0c2922,
+          #08101e
+        );
+      border: 1px solid #214b3a;
+      border-radius: 20px;
+      padding: 60px 25px;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+    }
+
+    .cta h2 span {
+      color: #4ade80;
+    }
+
+    .cta > p {
+      color: #9ba8ba;
+      margin: 15px auto 30px;
+      max-width: 650px;
+    }
+
+    .contact-info {
+      margin: 25px auto;
+      max-width: 450px;
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #1d3540;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .contact-info p {
+      padding: 7px 0;
+      color: #c5cedc;
+    }
+
+    .contact-info strong {
+      color: white;
+    }
+
+    footer {
+      border-top: 1px solid #18233a;
+      text-align: center;
+      padding: 35px 20px;
+      color: #738096;
+      background: #030711;
+    }
+
+    footer strong {
+      color: #4ade80;
+    }
+
+    @media (max-width: 750px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .contact-info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <nav>
+
+    <div class="logo">
+      NEXO<span>VIA</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#internship">Internship</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      🚀 Innovating the Digital Future
+    </div>
+
+    <h1>
+      NEXO<span>VIA</span>
+    </h1>
+
+    <h2>
+      Innovate. Build. Transform.
+    </h2>
+
+    <p>
+      NEXOVIA Technologies creates innovative digital
+      solutions across Artificial Intelligence,
+      Software Development and Cyber Security.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#services" class="btn primary">
+        Explore Services
+      </a>
+
+      <a href="#contact" class="btn secondary">
+        Contact Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <h2 class="section-title">
+    About <span>NEXOVIA</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Technology that solves real-world problems.
+  </p>
+
+  <div class="about">
+
+    <p>
+      NEXOVIA Technologies is an emerging technology
+      startup focused on building practical and innovative
+      digital solutions. We combine modern technology,
+      creativity and problem-solving to help individuals,
+      students and businesses move towards a smarter
+      digital future.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <h3>AI</h3>
+        <p>Intelligent Solutions</p>
+      </div>
+
+      <div class="stat">
+        <h3>Cyber</h3>
+        <p>Security Solutions</p>
+      </div>
+
+      <div class="stat">
+        <h3>Tech</h3>
+        <p>Digital Innovation</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+  <h2 class="section-title">
+    Our <span>Services</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Building technology for tomorrow.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="icon">🤖</div>
+
+      <h3>AI & GenAI</h3>
+
+      <p>
+        AI-powered applications and intelligent solutions
+        designed for real-world use cases.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">💻</div>
+
+      <h3>Software Development</h3>
+
+      <p>
+        Modern websites, web applications and software
+        solutions for businesses and startups.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🔐</div>
+
+      <h3>Cyber Security</h3>
+
+      <p>
+        Security-focused solutions that help users
+        understand and protect themselves from
+        digital threats.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">📱</div>
+
+      <h3>App Development</h3>
+
+      <p>
+        User-friendly mobile and digital applications
+        designed around real user needs.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🎓</div>
+
+      <h3>Internship & Training</h3>
+
+      <p>
+        Practical technology learning programs in
+        AI, Full Stack Development and Cyber Security.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🚀</div>
+
+      <h3>Startup Solutions</h3>
+
+      <p>
+        Technology support and digital solutions
+        for innovative ideas and emerging businesses.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+  <div class="projects-inner">
+
+    <h2 class="section-title">
+      Our <span>Projects</span>
+    </h2>
+
+    <p class="section-subtitle">
+      Turning ideas into useful technology.
+    </p>
+
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="icon">🛡️</div>
+
+        <h3>Cyber Buddy</h3>
+
+        <p>
+          AI-powered cyber safety assistant that helps
+          users identify scams, phishing links and
+          suspicious messages.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🌱</div>
+
+        <h3>Plant Doctor AI</h3>
+
+        <p>
+          An AI-based concept designed to help identify
+          plant-related problems and provide useful
+          guidance.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">💡</div>
+
+        <h3>Future Innovations</h3>
+
+        <p>
+          More AI and technology solutions are currently
+          being developed at NEXOVIA.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= INTERNSHIP ================= -->
+
+<section id="internship">
+
+  <h2 class="section-title">
+    Internship & <span>Training</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Learn. Build. Experience.
+  </p>
+
+  <div class="internship-box">
+
+    <div class="icon">🎓</div>
+
+    <h3>
+      Practical Technology Programs
+    </h3>
+
+    <p>
+      NEXOVIA provides practical learning opportunities
+      for students interested in Full Stack Development,
+      Artificial Intelligence, Generative AI and
+      Cyber Security.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        href="https://wa.me/916383093370?text=Hi%20NEXOVIA%2C%20I%20am%20interested%20in%20your%20internship%20program."
+        class="btn primary"
+        target="_blank">
+        Apply via WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+  <div class="cta">
+
+    <h2>
+      Let's Build Something
+      <span>Great</span>
+    </h2>
+
+    <p>
+      Have an idea, project or collaboration opportunity?
+      Connect with NEXOVIA Technologies.
+    </p>
+
+
+    <div class="contact-info">
+
+      <p>
+        📞 <strong>+91 63830 93370</strong>
+      </p>
+
+      <p>
+        📧 <strong>infonexoviatechnologies</strong>
+      </p>
+
+      <p>
+        📍 <strong>Coimbatore, India</strong>
+      </p>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <a
+        href="tel:+916383093370"
+        class="btn primary">
+        📞 Call Us
+      </a>
+
+
+      <a
+        href="https://wa.me/916383093370?text=Hi%20NEXOVIA%20Technologies%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+        class="btn secondary"
+        target="_blank">
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  © 2026
+  <strong>NEXOVIA Technologies</strong>.
+  All Rights Reserved.
+
+  <br>
+
+  Coimbatore, India
+
+</footer>
+
+
+</body>
+            </html>
