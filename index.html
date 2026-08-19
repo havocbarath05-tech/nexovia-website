@@ -1,785 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>NEXOVIA Technologies | AI • Software • Cyber Security</title>
-
-  <meta name="description"
-        content="NEXOVIA Technologies - AI, Software Development, Cyber Security, App Development and Technology Solutions in Coimbatore, India.">
-
-  <meta name="keywords"
-        content="NEXOVIA, NEXOVIA Technologies, AI, Software Development, Cyber Security, Coimbatore">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050914;
-      color: white;
-      line-height: 1.6;
-    }
-
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      background: rgba(5, 9, 20, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #18233a;
-    }
-
-    nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 27px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #4ade80;
-    }
-
-    .logo span {
-      color: white;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #d7deeb;
-      text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #4ade80;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 130px 20px 80px;
-
-      background:
-        radial-gradient(
-          circle at 50% 30%,
-          #123b35 0%,
-          transparent 38%
-        ),
-        #050914;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 18px;
-      border: 1px solid #256d51;
-      border-radius: 30px;
-      color: #4ade80;
-      margin-bottom: 25px;
-      font-size: 14px;
-    }
-
-    .hero h1 {
-      font-size: clamp(50px, 10vw, 95px);
-      letter-spacing: 5px;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 span {
-      color: #4ade80;
-    }
-
-    .hero h2 {
-      font-size: clamp(22px, 4vw, 36px);
-      margin-bottom: 20px;
-      color: #dbe5f5;
-    }
-
-    .hero p {
-      color: #9ca9bd;
-      max-width: 680px;
-      margin: auto;
-      font-size: 17px;
-    }
-
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 13px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
-
-    .primary {
-      background: #22c55e;
-      color: #03110a;
-    }
-
-    .primary:hover {
-      background: #4ade80;
-      transform: translateY(-3px);
-    }
-
-    .secondary {
-      border: 1px solid #334155;
-      color: white;
-    }
-
-    .secondary:hover {
-      border-color: #4ade80;
-      color: #4ade80;
-      transform: translateY(-3px);
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 25px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-
-    .section-title span {
-      color: #4ade80;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #8e9aad;
-      margin-bottom: 45px;
-    }
-
-    .about {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      color: #aab5c7;
-      font-size: 17px;
-    }
-
-    .stats {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      min-width: 180px;
-      padding: 22px;
-      background: #0b1220;
-      border: 1px solid #1c2a42;
-      border-radius: 12px;
-    }
-
-    .stat h3 {
-      color: #4ade80;
-      font-size: 27px;
-    }
-
-    .stat p {
-      color: #8995a9;
-      font-size: 14px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: #0b1220;
-      border: 1px solid #1c2a42;
-      padding: 30px;
-      border-radius: 15px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #22c55e;
-      box-shadow: 0 10px 40px rgba(34, 197, 94, 0.12);
-    }
-
-    .icon {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #8f9caf;
-      font-size: 14px;
-    }
-
-    .projects {
-      background: #070d19;
-      max-width: none;
-    }
-
-    .projects-inner {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .internship-box {
-      margin-top: 45px;
-      padding: 35px;
-      background: #0b1220;
-      border: 1px solid #1c2a42;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .internship-box h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .internship-box p {
-      color: #9ba8ba;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .contact-section {
-      max-width: 1000px;
-    }
-
-    .cta {
-      text-align: center;
-      background:
-        linear-gradient(
-          135deg,
-          #0c2922,
-          #08101e
-        );
-      border: 1px solid #214b3a;
-      border-radius: 20px;
-      padding: 60px 25px;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-    }
-
-    .cta h2 span {
-      color: #4ade80;
-    }
-
-    .cta > p {
-      color: #9ba8ba;
-      margin: 15px auto 30px;
-      max-width: 650px;
-    }
-
-    .contact-info {
-      margin: 25px auto;
-      max-width: 450px;
-      text-align: left;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid #1d3540;
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-    .contact-info p {
-      padding: 7px 0;
-      color: #c5cedc;
-    }
-
-    .contact-info strong {
-      color: white;
-    }
-
-    footer {
-      border-top: 1px solid #18233a;
-      text-align: center;
-      padding: 35px 20px;
-      color: #738096;
-      background: #030711;
-    }
-
-    footer strong {
-      color: #4ade80;
-    }
-
-    @media (max-width: 750px) {
-
-      nav ul {
-        display: none;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        letter-spacing: 2px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      section {
-        padding: 70px 20px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .contact-info {
-        text-align: center;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXOVIA TECHNOLOGIES | Future Built</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#05070b;--card:#0b1018;--white:#f4f7fb;--muted:#8995a6;--cyan:#45e6ff;--purple:#8d6cff;--line:rgba(255,255,255,.09)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Manrope,sans-serif;overflow-x:hidden}
+h1,h2,h3,h4,.logo,.number{font-family:"Space Grotesk",sans-serif}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.navbar{position:fixed;top:0;left:0;width:100%;height:78px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:rgba(5,7,11,.72);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.logo{font-size:21px;font-weight:700;letter-spacing:3px}.logo span{color:var(--cyan)}.logo small{display:block;font-family:Manrope;color:#697588;font-size:7px;letter-spacing:4px;margin-top:3px}
+.nav-links{display:flex;list-style:none;gap:30px}.nav-links a{font-size:11px;color:#aab4c2;transition:.3s}.nav-links a:hover{color:var(--cyan)}
+.nav-contact{padding:12px 19px;border:1px solid rgba(69,230,255,.35);border-radius:30px;font-size:10px;color:var(--cyan);background:transparent;cursor:pointer}.nav-contact:hover{background:var(--cyan);color:#061018}
+.menu{display:none;font-size:25px;cursor:pointer}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:140px 7% 90px;overflow:hidden;background:radial-gradient(circle at 75% 35%,rgba(69,230,255,.13),transparent 28%),radial-gradient(circle at 20% 90%,rgba(141,108,255,.12),transparent 30%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,black,transparent)}
+.hero-content{position:relative;z-index:5;max-width:720px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(69,230,255,.25);border-radius:30px;color:var(--cyan);font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:25px}.dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+.hero h1{font-size:clamp(55px,8vw,105px);line-height:.91;letter-spacing:-6px}.hero h1 span{background:linear-gradient(100deg,var(--cyan),#8c7cff,#c46cff);-webkit-background-clip:text;color:transparent}
+.hero-description{max-width:590px;color:var(--muted);font-size:14px;line-height:1.9;margin-top:28px}
+.hero-buttons{display:flex;gap:12px;margin-top:32px}.btn{padding:15px 22px;border-radius:9px;font-size:10px;font-weight:800;transition:.35s;cursor:pointer;border:0}.btn-primary{background:var(--cyan);color:#041018}.btn-primary:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(69,230,255,.22)}.btn-outline{border:1px solid var(--line);color:#dbe4ee;background:transparent}.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-visual{position:absolute;right:5%;bottom:0;width:43%;max-width:600px;z-index:2}.hero-image{height:650px;object-fit:cover;border-radius:220px 220px 20px 20px;opacity:.82;filter:saturate(.7) contrast(1.1);mask-image:linear-gradient(to bottom,black 70%,transparent 100%)}.hero-image-glow{position:absolute;inset:15% 10% 10%;background:rgba(69,230,255,.15);filter:blur(80px);z-index:-1}
+.floating-box{position:absolute;right:5%;bottom:100px;padding:17px 20px;background:rgba(7,12,20,.72);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:15px;animation:float 4s ease-in-out infinite}.floating-box strong{color:var(--cyan);display:block;font-size:13px}.floating-box small{color:#778396;font-size:8px}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:#070b11}.marquee-track{display:flex;width:max-content;animation:marquee 25s linear infinite}.marquee span{font-family:"Space Grotesk";font-size:12px;letter-spacing:3px;color:#6d7888;padding:0 35px}.marquee span b{color:var(--cyan)}
+section{padding:110px 7%}.container{max-width:1250px;margin:auto}.section-label{color:var(--cyan);font-size:9px;letter-spacing:3px;font-weight:800;margin-bottom:15px}.section-title{font-size:clamp(42px,5vw,68px);line-height:1;letter-spacing:-4px}.section-text{color:var(--muted);max-width:650px;font-size:13px;line-height:1.9;margin-top:20px}
+.about{background:#f5f7fa;color:#081019}.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:55px}.about-image{height:510px;object-fit:cover;border-radius:24px;filter:saturate(.8)}.about-content{display:flex;flex-direction:column;justify-content:center}.about-content h3{font-size:38px;line-height:1.15;letter-spacing:-2px}.about-content p{color:#687583;font-size:13px;line-height:1.9;margin-top:20px}.about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}.point{padding:18px;border:1px solid #dfe5ea;border-radius:13px;background:#fff}.point strong{display:block;font-family:"Space Grotesk";font-size:21px}.point span{color:#74808c;font-size:9px}
+.services{background:#fff;color:#071018}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}.service-card{position:relative;min-height:400px;overflow:hidden;border-radius:20px;background:#0a1018;color:#fff;transition:.45s}.service-card:hover{transform:translateY(-10px)}.service-card img{height:220px;object-fit:cover;opacity:.7;transition:.5s}.service-card:hover img{transform:scale(1.06);opacity:.9}.service-content{padding:25px}.service-number{color:var(--cyan);font-size:9px;letter-spacing:2px}.service-content h3{font-size:25px;margin-top:10px}.service-content p{color:#8793a2;font-size:11px;line-height:1.8;margin-top:10px}
+.ai-section{background:radial-gradient(circle at 80% 30%,rgba(69,230,255,.1),transparent 30%),#05080d}.ai-layout{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-top:55px}.ai-image{height:550px;object-fit:cover;border-radius:25px;opacity:.75}.ai-content h3{font-size:50px;line-height:1;letter-spacing:-3px}.ai-content h3 span{color:var(--cyan)}.ai-content p{color:var(--muted);font-size:13px;line-height:1.9;margin-top:20px}.ai-features{margin-top:30px}.ai-feature{display:flex;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid var(--line)}.ai-feature-number{color:var(--cyan);font-family:"Space Grotesk"}.ai-feature span{color:#b8c2cf;font-size:11px}
+.dashboard-section{background:#f5f7fa;color:#071018}.dashboard{margin-top:55px;padding:35px;background:#080d14;border-radius:25px;box-shadow:0 30px 80px rgba(0,0,0,.15)}.dashboard-top{display:flex;justify-content:space-between;color:#8d99a8;font-size:10px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)}.dashboard-status{color:#4de6a5}.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}.metric{padding:25px;background:#0d141e;border:1px solid rgba(255,255,255,.07);border-radius:16px}.metric small{color:#738091;font-size:9px}.metric strong{display:block;font-size:35px;margin-top:10px;color:#fff}.progress{height:4px;background:#1b2531;margin-top:20px;border-radius:10px;overflow:hidden}.progress div{height:100%;width:84%;background:var(--cyan)}
+.contact{background:#060a10}.contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;margin-top:55px}.contact h3{font-size:60px;line-height:.95;letter-spacing:-4px}.contact h3 span{color:var(--cyan)}.contact-description{color:var(--muted);font-size:13px;line-height:1.9;margin-top:20px}.contact-info{margin-top:30px}.contact-info div{margin-bottom:20px}.contact-info small{display:block;color:#59687a;font-size:8px;letter-spacing:2px;margin-bottom:6px}.contact-info a{color:#dce5ee;font-size:13px}.contact-info a:hover{color:var(--cyan)}
+.contact-form{padding:32px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:22px}.form-group{margin-bottom:15px}.form-group label{display:block;color:#7e8b9b;font-size:8px;letter-spacing:1px;margin-bottom:7px}input,textarea{width:100%;padding:15px;border:1px solid var(--line);border-radius:9px;outline:none;background:#090e15;color:#fff;font-family:Manrope}textarea{min-height:130px;resize:none}input:focus,textarea:focus{border-color:var(--cyan)}
+footer{padding:35px 7%;background:#020407;border-top:1px solid var(--line)}.footer{display:flex;justify-content:space-between;align-items:center}.footer-logo{font-family:"Space Grotesk";font-size:20px;letter-spacing:3px}.footer-logo span{color:var(--cyan)}.footer-copy{color:#536173;font-size:9px}
+.contact-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(15px);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}.contact-overlay.active{display:flex}.contact-popup{width:100%;max-width:470px;background:linear-gradient(145deg,#101923,#060a10);border:1px solid rgba(69,230,255,.2);border-radius:25px;padding:38px;position:relative;box-shadow:0 30px 100px rgba(0,0,0,.6);animation:contactPopup .35s ease}.close-contact{position:absolute;right:18px;top:15px;width:35px;height:35px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:#111923;color:white;font-size:22px;cursor:pointer}.popup-label{color:#45e6ff;font-size:8px;letter-spacing:3px;margin-bottom:15px}.contact-popup h2{font-family:"Space Grotesk";font-size:42px;line-height:1;letter-spacing:-2px}.contact-popup h2 span{color:#45e6ff}.contact-popup p{color:#7f8c9d;font-size:12px;line-height:1.7;margin-top:15px}.contact-options{display:grid;gap:10px;margin-top:25px}.contact-option{display:flex;align-items:center;gap:15px;padding:15px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(255,255,255,.035);transition:.3s}.contact-option:hover{border-color:#45e6ff;transform:translateX(5px);background:rgba(69,230,255,.06)}.contact-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;background:rgba(69,230,255,.1);color:#45e6ff;font-size:17px}.contact-option strong{display:block;font-size:12px;color:#fff}.contact-option small{display:block;font-size:9px;color:#718092;margin-top:4px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes contactPopup{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:900px){.nav-links{display:none;position:absolute;top:78px;left:5%;right:5%;flex-direction:column;gap:0;padding:12px;background:#080d14;border:1px solid var(--line);border-radius:15px}.nav-links.active{display:flex}.nav-links a{display:block;padding:13px}.nav-contact{display:none}.menu{display:block}.hero{min-height:900px}.hero-content{max-width:100%}.hero-visual{width:70%;right:-10%;opacity:.35}.about-layout,.ai-layout,.contact-layout{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr 1fr}.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:600px){section{padding:80px 5%}.hero{padding:120px 5% 70px}.hero h1{font-size:55px;letter-spacing:-4px}.hero-buttons{flex-direction:column}.btn{text-align:center}.hero-visual{width:100%;right:-30%;opacity:.2}.about-points{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.ai-content h3{font-size:42px}.contact h3{font-size:48px}.footer{flex-direction:column;align-items:flex-start;gap:15px}}
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
-<header>
-
-  <nav>
-
-    <div class="logo">
-      NEXO<span>VIA</span>
-    </div>
-
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#internship">Internship</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-  </nav>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
+<nav class="navbar">
+<a href="#home" class="logo">NEX<span>O</span>VIA<small>TECHNOLOGIES</small></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#ai">AI Solutions</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<button class="nav-contact" onclick="openContact()">CONTACT US →</button>
+<div class="menu" id="menu">☰</div>
+</nav>
 
 <section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="badge">
-      🚀 Innovating the Digital Future
-    </div>
-
-    <h1>
-      NEXO<span>VIA</span>
-    </h1>
-
-    <h2>
-      Innovate. Build. Transform.
-    </h2>
-
-    <p>
-      NEXOVIA Technologies creates innovative digital
-      solutions across Artificial Intelligence,
-      Software Development and Cyber Security.
-    </p>
-
-    <div class="buttons">
-
-      <a href="#services" class="btn primary">
-        Explore Services
-      </a>
-
-      <a href="#contact" class="btn secondary">
-        Contact Us
-      </a>
-
-    </div>
-
-  </div>
-
+<div class="hero-grid"></div>
+<div class="hero-content">
+<div class="eyebrow"><div class="dot"></div>NEXOVIA TECHNOLOGIES</div>
+<h1>We build<br>what's <span>next.</span></h1>
+<p class="hero-description">NEXOVIA TECHNOLOGIES creates intelligent digital products, AI-powered experiences, cybersecurity solutions and modern software designed for the next generation.</p>
+<div class="hero-buttons"><a href="#services" class="btn btn-primary">EXPLORE TECHNOLOGY →</a><button class="btn btn-outline" onclick="openContact()">START A PROJECT</button></div>
+</div>
+<div class="hero-visual"><div class="hero-image-glow"></div><img class="hero-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" alt="Technology"><div class="floating-box"><strong>AI • CYBER • DIGITAL</strong><small>Future-ready technology</small></div></div>
 </section>
 
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-  <h2 class="section-title">
-    About <span>NEXOVIA</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Technology that solves real-world problems.
-  </p>
-
-  <div class="about">
-
-    <p>
-      NEXOVIA Technologies is an emerging technology
-      startup focused on building practical and innovative
-      digital solutions. We combine modern technology,
-      creativity and problem-solving to help individuals,
-      students and businesses move towards a smarter
-      digital future.
-    </p>
-
-    <div class="stats">
-
-      <div class="stat">
-        <h3>AI</h3>
-        <p>Intelligent Solutions</p>
-      </div>
-
-      <div class="stat">
-        <h3>Cyber</h3>
-        <p>Security Solutions</p>
-      </div>
-
-      <div class="stat">
-        <h3>Tech</h3>
-        <p>Digital Innovation</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-
-<section id="services">
-
-  <h2 class="section-title">
-    Our <span>Services</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Building technology for tomorrow.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-
-      <div class="icon">🤖</div>
-
-      <h3>AI & GenAI</h3>
-
-      <p>
-        AI-powered applications and intelligent solutions
-        designed for real-world use cases.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">💻</div>
-
-      <h3>Software Development</h3>
-
-      <p>
-        Modern websites, web applications and software
-        solutions for businesses and startups.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">🔐</div>
-
-      <h3>Cyber Security</h3>
-
-      <p>
-        Security-focused solutions that help users
-        understand and protect themselves from
-        digital threats.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">📱</div>
-
-      <h3>App Development</h3>
-
-      <p>
-        User-friendly mobile and digital applications
-        designed around real user needs.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">🎓</div>
-
-      <h3>Internship & Training</h3>
-
-      <p>
-        Practical technology learning programs in
-        AI, Full Stack Development and Cyber Security.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">🚀</div>
-
-      <h3>Startup Solutions</h3>
-
-      <p>
-        Technology support and digital solutions
-        for innovative ideas and emerging businesses.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section class="projects" id="projects">
-
-  <div class="projects-inner">
-
-    <h2 class="section-title">
-      Our <span>Projects</span>
-    </h2>
-
-    <p class="section-subtitle">
-      Turning ideas into useful technology.
-    </p>
-
-
-    <div class="cards">
-
-      <div class="card">
-
-        <div class="icon">🛡️</div>
-
-        <h3>Cyber Buddy</h3>
-
-        <p>
-          AI-powered cyber safety assistant that helps
-          users identify scams, phishing links and
-          suspicious messages.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🌱</div>
-
-        <h3>Plant Doctor AI</h3>
-
-        <p>
-          An AI-based concept designed to help identify
-          plant-related problems and provide useful
-          guidance.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">💡</div>
-
-        <h3>Future Innovations</h3>
-
-        <p>
-          More AI and technology solutions are currently
-          being developed at NEXOVIA.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= INTERNSHIP ================= -->
-
-<section id="internship">
-
-  <h2 class="section-title">
-    Internship & <span>Training</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Learn. Build. Experience.
-  </p>
-
-  <div class="internship-box">
-
-    <div class="icon">🎓</div>
-
-    <h3>
-      Practical Technology Programs
-    </h3>
-
-    <p>
-      NEXOVIA provides practical learning opportunities
-      for students interested in Full Stack Development,
-      Artificial Intelligence, Generative AI and
-      Cyber Security.
-    </p>
-
-    <div class="buttons">
-
-      <a
-        href="https://wa.me/916383093370?text=Hi%20NEXOVIA%2C%20I%20am%20interested%20in%20your%20internship%20program."
-        class="btn primary"
-        target="_blank">
-        Apply via WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact-section" id="contact">
-
-  <div class="cta">
-
-    <h2>
-      Let's Build Something
-      <span>Great</span>
-    </h2>
-
-    <p>
-      Have an idea, project or collaboration opportunity?
-      Connect with NEXOVIA Technologies.
-    </p>
-
-
-    <div class="contact-info">
-
-      <p>
-        📞 <strong>+91 63830 93370</strong>
-      </p>
-
-      <p>
-        📧 <strong>infonexoviatechnologies</strong>
-      </p>
-
-      <p>
-        📍 <strong>Coimbatore, India</strong>
-      </p>
-
-    </div>
-
-
-    <div class="buttons">
-
-      <a
-        href="tel:+916383093370"
-        class="btn primary">
-        📞 Call Us
-      </a>
-
-
-      <a
-        href="https://wa.me/916383093370?text=Hi%20NEXOVIA%20Technologies%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-        class="btn secondary"
-        target="_blank">
-        💬 WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-  © 2026
-  <strong>NEXOVIA Technologies</strong>.
-  All Rights Reserved.
-
-  <br>
-
-  Coimbatore, India
-
-</footer>
-
-
+<div class="marquee"><div class="marquee-track"><span><b>✦</b> ARTIFICIAL INTELLIGENCE</span><span><b>✦</b> CYBERSECURITY</span><span><b>✦</b> SOFTWARE</span><span><b>✦</b> DIGITAL INNOVATION</span><span><b>✦</b> CLOUD TECHNOLOGY</span><span><b>✦</b> ARTIFICIAL INTELLIGENCE</span><span><b>✦</b> CYBERSECURITY</span><span><b>✦</b> SOFTWARE</span></div></div>
+
+<section class="about" id="about"><div class="container"><div class="section-label">01 / WHO WE ARE</div><h2 class="section-title">Technology<br>with purpose.</h2><div class="about-layout"><img class="about-image" src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=85" alt="Technology Team"><div class="about-content"><h3>Ideas are everywhere.<br>We turn them into technology.</h3><p>NEXOVIA TECHNOLOGIES is focused on building meaningful digital solutions through artificial intelligence, cybersecurity, software development and innovation.</p><div class="about-points"><div class="point"><strong>01</strong><span>Innovation First</span></div><div class="point"><strong>02</strong><span>Security Focused</span></div><div class="point"><strong>03</strong><span>Future Ready</span></div><div class="point"><strong>04</strong><span>Scalable Systems</span></div></div></div></div></div></section>
+
+<section class="services" id="services"><div class="container"><div class="section-label">02 / WHAT WE DO</div><h2 class="section-title">Built for the<br>digital future.</h2><div class="service-grid">
+<div class="service-card"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85" alt="AI"><div class="service-content"><div class="service-number">01 / AI</div><h3>Artificial Intelligence</h3><p>Intelligent assistants, automation, machine learning and AI-powered applications.</p></div></div>
+<div class="service-card"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85" alt="Cybersecurity"><div class="service-content"><div class="service-number">02 / SECURITY</div><h3>Cybersecurity</h3><p>Modern security solutions designed to protect people, platforms and digital assets.</p></div></div>
+<div class="service-card"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=85" alt="Software"><div class="service-content"><div class="service-number">03 / SOFTWARE</div><h3>Software Development</h3><p>High-performance websites, applications and scalable digital platforms.</p></div></div>
+</div></div></section>
+
+<section class="ai-section" id="ai"><div class="container"><div class="section-label">03 / INTELLIGENCE</div><h2 class="section-title">Where AI meets<br>human thinking.</h2><div class="ai-layout"><img class="ai-image" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1000&q=85" alt="AI"><div class="ai-content"><h3>Build smarter.<br>Build <span>faster.</span></h3><p>Our AI solutions combine intelligent automation, data-driven insights and modern user experiences to solve real-world problems.</p><div class="ai-features"><div class="ai-feature"><div class="ai-feature-number">01</div><span>AI Assistants & Automation</span></div><div class="ai-feature"><div class="ai-feature-number">02</div><span>Intelligent Data Analysis</span></div><div class="ai-feature"><div class="ai-feature-number">03</div><span>AI-Powered Security</span></div><div class="ai-feature"><div class="ai-feature-number">04</div><span>Smart Digital Experiences</span></div></div></div></div></div></section>
+
+<section class="dashboard-section"><div class="container"><div class="section-label">04 / TECHNOLOGY</div><h2 class="section-title">Engineered<br>to perform.</h2><div class="dashboard"><div class="dashboard-top"><span>NEXOVIA TECHNOLOGY SYSTEM</span><span class="dashboard-status">● ALL SYSTEMS OPERATIONAL</span></div><div class="dashboard-grid"><div class="metric"><small>AI PROCESSING</small><strong>94%</strong><div class="progress"><div></div></div></div><div class="metric"><small>SECURITY</small><strong>99.8%</strong><div class="progress"><div style="width:99%"></div></div></div><div class="metric"><small>SYSTEM UPTIME</small><strong>99.9%</strong><div class="progress"><div style="width:99%"></div></div></div></div></div></div></section>
+
+<section class="contact" id="contact"><div class="container"><div class="section-label">05 / CONTACT</div><div class="contact-layout"><div><h3>Let's build<br><span>something.</span></h3><p class="contact-description">Have a project idea, business requirement or technology challenge? Let's create something meaningful together.</p><div class="contact-info"><div><small>PHONE</small><a href="tel:+916383093370">+91 63830 93370</a></div><div><small>EMAIL</small><a href="mailto:infonexoviatechnologies@gmail.com">infonexoviatechnologies@gmail.com</a></div><div><small>COMPANY</small><a href="#">NEXOVIA TECHNOLOGIES</a></div></div></div>
+<form class="contact-form" id="contactForm"><div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="Enter your name" required></div><div class="form-group"><label>EMAIL ADDRESS</label><input type="email" placeholder="Enter your email" required></div><div class="form-group"><label>MESSAGE</label><textarea placeholder="Tell us about your project..." required></textarea></div><button class="btn btn-primary">SEND MESSAGE →</button></form>
+</div></div></section>
+
+<footer><div class="footer"><div class="footer-logo">NEX<span>O</span>VIA</div><div class="footer-copy">© 2026 NEXOVIA TECHNOLOGIES. All rights reserved.</div></div></footer>
+
+<div class="contact-overlay" id="contactOverlay">
+<div class="contact-popup">
+<button class="close-contact" onclick="closeContact()">×</button>
+<div class="popup-label">NEXOVIA TECHNOLOGIES</div>
+<h2>How can we<br><span>connect?</span></h2>
+<p>Choose your preferred way to contact our team.</p>
+<div class="contact-options">
+<a href="tel:+916383093370" class="contact-option"><div class="contact-icon">☎</div><div><strong>Call Us</strong><small>+91 63830 93370</small></div></a>
+<a href="mailto:infonexoviatechnologies@gmail.com" class="contact-option"><div class="contact-icon">✉</div><div><strong>Email Us</strong><small>infonexoviatechnologies@gmail.com</small></div></a>
+<a href="https://wa.me/916383093370" target="_blank" class="contact-option"><div class="contact-icon">◉</div><div><strong>WhatsApp</strong><small>Chat with NEXOVIA</small></div></a>
+<a href="#contact" onclick="closeContact()" class="contact-option"><div class="contact-icon">↗</div><div><strong>Send Enquiry</strong><small>Fill our contact form</small></div></a>
+</div></div></div>
+
+<script>
+const menu=document.getElementById("menu");
+const navLinks=document.getElementById("navLinks");
+menu.addEventListener("click",()=>navLinks.classList.toggle("active"));
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>navLinks.classList.remove("active")));
+function openContact(){document.getElementById("contactOverlay").classList.add("active")}
+function closeContact(){document.getElementById("contactOverlay").classList.remove("active")}
+document.getElementById("contactOverlay").addEventListener("click",e=>{if(e.target===e.currentTarget)closeContact()});
+document.getElementById("contactForm").addEventListener("submit",function(e){e.preventDefault();alert("Thank you! NEXOVIA TECHNOLOGIES will contact you soon.");this.reset()});
+</script>
 </body>
-            </html>
+</html>
