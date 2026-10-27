@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Books | NEXOVIA</title>
+  <link rel="stylesheet" href="ebooks.css">
+</head>
+<body>
+  <header class="ebook-header">
+    <a class="ebook-brand" href="/">NEXOVIA <span>E-BOOKS</span></a>
+    <a class="ebook-back" href="/">← Main website</a>
+  </header>
+
+  <main class="ebook-wrap">
+    <section class="ebook-hero">
+      <p class="ebook-eyebrow">NEXOVIA DIGITAL STORE</p>
+      <h1>Learn something.<br><span>Build something.</span></h1>
+      <p>Practical digital guides for students, creators and entrepreneurs.</p>
+      <a class="ebook-cta" href="#ebook-library">Explore e-books ↓</a>
+      <div class="ebook-hero-art" aria-hidden="true">📚</div>
+    </section>
+
+    <section id="ebook-library" class="ebook-library">
+      <div class="ebook-section-head">
+        <div><p class="ebook-eyebrow">THE DIGITAL SHELF</p><h2>Explore e-books</h2></div>
+        <input id="ebook-search" type="search" placeholder="Search e-books..." aria-label="Search e-books">
+      </div>
+      <div id="ebook-grid" class="ebook-grid"></div>
+    </section>
+
+    <section class="ebook-help">
+      <strong>Want to buy an e-book?</strong>
+      <p>Use the Buy button to contact the store. Add your official WhatsApp number and UPI details in <code>ebooks.js</code> before publishing.</p>
+    </section>
+  </main>
+
+  <footer class="ebook-footer">© <span id="ebook-year"></span> NEXOVIA · Digital knowledge, delivered.</footer>
+  <script src="ebooks.js"></script>
+</body>
+</html>
